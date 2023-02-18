@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package account.v1;
+package drite.account.v1;
 
 enum CodeChallengeMethod {
   CODE_CHALLENGE_METHOD_UNSPECIFIED = 0;

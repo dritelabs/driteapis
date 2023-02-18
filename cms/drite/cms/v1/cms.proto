@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package cms.v1;
+package drite.cms.v1;
 
 import "google/protobuf/struct.proto";
 

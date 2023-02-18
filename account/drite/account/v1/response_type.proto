@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package account.v1;
+package drite.account.v1;
 
 enum ResponseType {
   RESPONSE_TYPE_UNSPECIFIED = 0;

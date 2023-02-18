@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package account.v1;
+package drite.account.v1;
 
-import "account/v1/client.proto";
-import "account/v1/client_approval.proto";
-import "account/v1/profile.proto";
+import "drite/account/v1/client.proto";
+import "drite/account/v1/client_approval.proto";
+import "drite/account/v1/profile.proto";
 import "google/protobuf/timestamp.proto";
 
 message User {

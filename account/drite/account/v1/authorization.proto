@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package account.v1;
+package drite.account.v1;
 
-import "account/v1/client.proto";
-import "account/v1/code_challenge_method.proto";
-import "account/v1/scope.proto";
+import "drite/account/v1/client.proto";
+import "drite/account/v1/code_challenge_method.proto";
+import "drite/account/v1/scope.proto";
 
 message AuthorizationRequest {
   string client_id = 1;

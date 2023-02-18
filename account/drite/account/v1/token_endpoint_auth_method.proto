@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package account.v1;
+package drite.account.v1;
 
 enum TokenEndpointAuthMethod {
   TOKEN_ENDPOINT_AUTH_METHOD_UNSPECIFIED = 0;
