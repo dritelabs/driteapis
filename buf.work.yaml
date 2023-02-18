@@ -1,6 +1,6 @@
 version: v1
 directories:
-  - accountapis
-  # - cmsapis
+  - account
+  - cms
   # - iamapis
   # - siteapis

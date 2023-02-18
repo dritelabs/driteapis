@@ -1,0 +1,149 @@
+syntax = "proto3";
+
+package cms.v1;
+
+import "google/protobuf/struct.proto";
+
+message CreateFieldRequest {
+  string preset_id = 1;
+  string parent_id = 2;
+  string field_type_id = 3;
+  bool is_repeatable = 4;
+  string name = 5;
+  google.protobuf.Struct attributes = 6;
+}
+
+message CreateFilledFieldRequest {
+  string preset_id = 1;
+  string parent_id = 2;
+  string field_id = 3;
+  string value = 5;
+  repeated CreateFilledFieldRequest filled_field = 6;
+}
+
+message CreateManyFilledFieldsRequest {
+  repeated CreateFilledFieldRequest filled_field = 1;
+}
+
+message CreatePresetRequest {
+  string name = 1;
+}
+
+message DeleteRequest {
+  string id = 1;
+}
+
+message Field {
+  string id = 1;
+  string preset_id = 2;
+  string parent_id = 3;
+  string field_type_id = 4;
+  string name = 5;
+  bool is_repeatable = 6;
+  google.protobuf.Struct attributes = 7;
+  repeated FilledField filled_field = 8;
+  repeated Field field = 9;
+  Field parent = 10;
+  Preset preset = 11;
+  FieldType type = 12;
+  string created_at = 13;
+  string updated_at = 14;
+}
+
+message FieldType {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string type = 4;
+  string created_at = 5;
+  string updated_at = 6;
+}
+
+message FilledField {
+  string id = 1;
+  string preset_id = 2;
+  string parent_id = 3;
+  string field_id = 4;
+  string value = 6;
+  Field field = 7;
+  repeated FilledField filled_field = 8;
+  FilledField parent = 9;
+  Preset preset = 10;
+  string created_at = 11;
+  string updated_at = 12;
+}
+
+message GetRequest {
+  string id = 1;
+}
+
+message ListRequest {
+  string parent = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+}
+
+message ListFieldsResponse {
+  repeated Field field = 1;
+  string next_page_token = 2;
+}
+
+message ListFieldTypesResponse {
+  repeated FieldType field_type = 1;
+  string next_page_token = 2;
+}
+
+message ListFilledFieldsRequest {
+  string parent = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+  string preset_id = 4;
+}
+
+message ListFilledFieldsResponse {
+  repeated FilledField filled_fields = 1;
+  string next_page_token = 2;
+}
+
+message ListPresetsResponse {
+  repeated Preset preset = 1;
+  string next_page_token = 2;
+}
+
+message Preset {
+  string id = 1;
+  string name = 2;
+  string created_at = 3;
+  string updated_at = 4;
+
+  repeated Field field = 5;
+}
+
+message UpdateFieldRequest {
+  string id = 1;
+  string parent_id = 2;
+  string name = 3;
+  google.protobuf.Struct attributes = 4;
+}
+
+message UpdatePresetRequest {
+  string id = 1;
+  string name = 2;
+}
+
+service CMSService {
+  rpc CreatePreset(CreatePresetRequest) returns (Preset);
+  rpc CreateFilledField(CreateFilledFieldRequest) returns (FilledField);
+  rpc CreateManyFilledFields(CreateManyFilledFieldsRequest) returns (ListFilledFieldsResponse);
+  rpc CreateField(CreateFieldRequest) returns (Field);
+  rpc DeleteField(DeleteRequest) returns (Field);
+  rpc DeletePreset(DeleteRequest) returns (Preset);
+  rpc GetField(GetRequest) returns (Field);
+  rpc GetPreset(GetRequest) returns (Preset);
+  rpc ListPresets(ListRequest) returns (ListPresetsResponse);
+  rpc ListFields(ListRequest) returns (ListFieldsResponse);
+  rpc ListFieldTypes(ListRequest) returns (ListFieldTypesResponse);
+  rpc ListFilledFields(ListFilledFieldsRequest) returns (ListFilledFieldsResponse);
+  rpc UpdatePreset(UpdatePresetRequest) returns (Preset);
+  rpc UpdateField(UpdateFieldRequest) returns (Field);
+}
