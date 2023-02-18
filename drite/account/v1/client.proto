@@ -52,12 +52,20 @@ message CreateClientRequest {
   ApplicationType type = 21;
 }
 
+message CreateClientResponse {
+  Client client = 1;
+}
+
 message DeleteClientRequest {
   string id = 1;
 }
 
 message GetClientRequest {
   string id = 1;
+}
+
+message GetClientResponse {
+  Client client = 1;
 }
 
 message ListClientsRequest {}

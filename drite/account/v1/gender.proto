@@ -2,10 +2,8 @@ syntax = "proto3";
 
 package account.v1;
 
- 
-
 enum Gender {
-  UNSPECIFIED = 0;
-  FEMALE = 1;
-  MALE = 2;
+  GENDER_UNSPECIFIED = 0;
+  GENDER_FEMALE = 1;
+  GENDER_MALE = 2;
 }

@@ -7,6 +7,7 @@ import "account/v1/jwk.proto";
 //import "account/v1/token.proto";
 import "account/v1/user.proto";
 //import "account/v1/authorization.proto";
+import "google/protobuf/empty.proto";
 import "google/protobuf/any.proto";
 
 service AccountService {
@@ -18,8 +19,8 @@ service AccountService {
   rpc CreateClient(CreateClientRequest) returns (Client);
   // rpc CreateToken(CreateTokenRequest) returns (TokenResponse);
   rpc CreateUser(CreateUserRequest) returns (User);
-  rpc DeleteClient(DeleteClientRequest) returns (Client);
-  // rpc DeleteUser (DeleteUserRequest) returns (UserResponse);
+  rpc DeleteClient(DeleteClientRequest) returns (google.protobuf.Empty);
+  rpc DeleteUser (DeleteUserRequest) returns (google.protobuf.Empty);
   rpc GetClient(GetClientRequest) returns (Client);
   rpc GetJwks(GetJwksRequest) returns (google.protobuf.Any);
   rpc GetUser(GetUserRequest) returns (User);

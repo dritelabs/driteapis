@@ -15,3 +15,7 @@ message Jwk {
 }
 
 message GetJwksRequest {}
+
+message GetJwksResponse {
+  google.protobuf.Any jwks = 1;
+}

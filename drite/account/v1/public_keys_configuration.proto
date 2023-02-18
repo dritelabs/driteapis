@@ -2,9 +2,8 @@ syntax = "proto3";
 
 package account.v1;
 
- 
-
 enum PublicKeysConfiguration {
-  LOCAL = 0;
-  REMOTE = 1;
+  PUBLIC_KEYS_CONFIGURATION_UNSPECIFIED = 0;
+  PUBLIC_KEYS_CONFIGURATION_LOCAL = 1;
+  PUBLIC_KEYS_CONFIGURATION_REMOTE = 2;
 }

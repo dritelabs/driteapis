@@ -3,7 +3,8 @@ syntax = "proto3";
 package account.v1;
 
 enum ApplicationType {
-  WEB = 0;
-  NATIVE = 1;
-  BROWSER = 2;
+  APPLICATION_TYPE_UNSPECIFIED = 0;
+  APPLICATION_TYPE_WEB = 1;
+  APPLICATION_TYPE_NATIVE = 2;
+  APPLICATION_TYPE_BROWSER = 3;
 }
