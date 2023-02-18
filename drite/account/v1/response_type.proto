@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package account.v1;
+
+ 
+
+enum ResponseType {
+  CODE = 0;
+}

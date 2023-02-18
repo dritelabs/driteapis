@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package account.v1;
+
+ 
+
+enum Gender {
+  UNSPECIFIED = 0;
+  FEMALE = 1;
+  MALE = 2;
+}

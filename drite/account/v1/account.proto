@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package account.v1;
+
+import "account/v1/client.proto";
+import "account/v1/jwk.proto";
+//import "account/v1/token.proto";
+import "account/v1/user.proto";
+//import "account/v1/authorization.proto";
+import "google/protobuf/any.proto";
+
+service AccountService {
+  rpc AuthenticateUser(AuthenticateUserRequest) returns (AuthenticateUserResponse);
+  // rpc Authorize(AuthorizationRequest) returns (AuthorizationResponse);
+  // rpc CreateAuthorization (CreateAuthorizationRequest) returns (CreateAuthorizationResponse);
+  // rpc Token(TokenRequest) returns (TokenResponse);
+  // rpc CreateAuthorization(CreateAuthorizationRequest) returns (AuthorizationResponse);
+  rpc CreateClient(CreateClientRequest) returns (Client);
+  // rpc CreateToken(CreateTokenRequest) returns (TokenResponse);
+  rpc CreateUser(CreateUserRequest) returns (User);
+  rpc DeleteClient(DeleteClientRequest) returns (Client);
+  // rpc DeleteUser (DeleteUserRequest) returns (UserResponse);
+  rpc GetClient(GetClientRequest) returns (Client);
+  rpc GetJwks(GetJwksRequest) returns (google.protobuf.Any);
+  rpc GetUser(GetUserRequest) returns (User);
+  rpc ListClients(ListClientsRequest) returns (ListClientsResponse);
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
+  // rpc UpdateClient (UpdateClientRequest) returns (ClientResponse);
+  rpc UpdateUser(UpdateUserRequest) returns (User);
+  // rpc VerifyAuthorization (VerifyAuthorizationRequest) returns (VerifyAuthorizationResponse);
+}

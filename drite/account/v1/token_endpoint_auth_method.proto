@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package account.v1;
+
+ 
+
+enum TokenEndpointAuthMethod {
+  CLIENT_SECRET_BASIC = 0;
+  PRIVATE_KEY_JWT = 1;
+  NONE = 2;
+}

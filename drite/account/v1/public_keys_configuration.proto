@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package account.v1;
+
+ 
+
+enum PublicKeysConfiguration {
+  LOCAL = 0;
+  REMOTE = 1;
+}
