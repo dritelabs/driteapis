@@ -4,20 +4,18 @@ package drite.account.v1;
 
 import "drite/account/v1/client.proto";
 import "drite/account/v1/jwk.proto";
-//import "drite/account/v1/token.proto";
+import "drite/account/v1/token.proto";
 import "drite/account/v1/user.proto";
-//import "drite/account/v1/authorization.proto";
+import "drite/account/v1/authorization.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/any.proto";
 
 service AccountService {
   rpc AuthenticateUser(AuthenticateUserRequest) returns (AuthenticateUserResponse);
-  // rpc Authorize(AuthorizationRequest) returns (AuthorizationResponse);
-  // rpc CreateAuthorization (CreateAuthorizationRequest) returns (CreateAuthorizationResponse);
-  // rpc Token(TokenRequest) returns (TokenResponse);
-  // rpc CreateAuthorization(CreateAuthorizationRequest) returns (AuthorizationResponse);
+  rpc Authorize(AuthorizeRequest) returns (AuthorizationResponse);
+  rpc Authorization (AuthorizationRequest) returns (AuthorizationResponse);
+  rpc Token(TokenRequest) returns (TokenResponse);
   rpc CreateClient(CreateClientRequest) returns (Client);
-  // rpc CreateToken(CreateTokenRequest) returns (TokenResponse);
   rpc CreateUser(CreateUserRequest) returns (User);
   rpc DeleteClient(DeleteClientRequest) returns (google.protobuf.Empty);
   rpc DeleteUser (DeleteUserRequest) returns (google.protobuf.Empty);
@@ -26,7 +24,6 @@ service AccountService {
   rpc GetUser(GetUserRequest) returns (User);
   rpc ListClients(ListClientsRequest) returns (ListClientsResponse);
   rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
-  // rpc UpdateClient (UpdateClientRequest) returns (ClientResponse);
+  rpc UpdateClient (UpdateClientRequest) returns (Client);
   rpc UpdateUser(UpdateUserRequest) returns (User);
-  // rpc VerifyAuthorization (VerifyAuthorizationRequest) returns (VerifyAuthorizationResponse);
 }
