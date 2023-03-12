@@ -6,21 +6,12 @@ import "drite/account/v1/client.proto";
 import "drite/account/v1/code_challenge_method.proto";
 import "drite/account/v1/scope.proto";
 
-message AuthorizeRequest {
-  string client_id = 1;
-  string code_challenge = 2;
-  optional CodeChallengeMethod code_challenge_method = 3;
-  string redirect_uri = 4;
-  optional string scope = 5;
-  optional string state = 6;
-}
-
 message AuthorizeResponse {
   Client client = 1;
   repeated Scope scopes = 2;
 }
 
-message CreateAuthorizationRequest {
+message AuthorizationRequest {
   string client_id = 1;
   string code_challenge = 2;
   optional CodeChallengeMethod code_challenge_method = 3;
@@ -29,6 +20,6 @@ message CreateAuthorizationRequest {
   optional string state = 6;
 }
 
-message CreateAuthorizationResponse {
+message AuthorizationResponse {
   string redirect_uri = 1;
 }
