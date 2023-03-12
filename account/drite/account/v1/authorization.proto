@@ -20,7 +20,7 @@ message AuthorizeResponse {
   repeated Scope scopes = 2;
 }
 
-message AuthorizationRequest {
+message CreateAuthorizationRequest {
   string client_id = 1;
   string code_challenge = 2;
   optional CodeChallengeMethod code_challenge_method = 3;
@@ -29,6 +29,6 @@ message AuthorizationRequest {
   optional string state = 6;
 }
 
-message AuthorizationResponse {
+message CreateAuthorizationResponse {
   string redirect_uri = 1;
 }
