@@ -29,8 +29,9 @@ message TokenRequest {
 
 message TokenResponse {
   string access_token = 1;
-  string token_type = 2;
-  string expires_in = 3;
-  string scope = 4;
-  string refresh_token = 5;
+  string expires_in = 2;
+  string id_token = 3;
+  string refresh_token = 4;
+  string scope = 5;
+  string token_type = 6;
 }

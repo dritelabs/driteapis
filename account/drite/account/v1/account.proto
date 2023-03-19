@@ -11,7 +11,7 @@ import "google/protobuf/empty.proto";
 import "google/protobuf/any.proto";
 
 service AccountService {
-  rpc AuthenticateUser(AuthenticateUserRequest) returns (AuthenticateUserResponse);
+  rpc AuthenticateUser(AuthenticateUserRequest) returns (TokenResponse);
   rpc Authorize(AuthorizationRequest) returns (AuthorizeResponse);
   rpc CreateAuthorization (AuthorizationRequest) returns (AuthorizationResponse);
   rpc Token(TokenRequest) returns (TokenResponse);

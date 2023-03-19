@@ -32,11 +32,6 @@ message AuthenticateUserRequest {
   string password = 2;
 }
 
-message AuthenticateUserResponse {
-  string access_token = 1;
-  string refresh_token = 2;
-}
-
 message CreateUserRequest {
   string email = 1;
   string given_name = 2;

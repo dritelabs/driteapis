@@ -4,8 +4,6 @@ package drite.account.v1;
 
 import "google/protobuf/timestamp.proto";
 
- 
-
 message Scope {
   string id = 1;
   string display_name = 2;
