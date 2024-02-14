@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+package drite.account.user.v1;
+
+// import "pb/drite/accounts/v1/client.proto";
+// import "pb/drite/accounts/v1/client_approval.proto";
+import "drite/account/user/v1/profile.proto";
+import "drite/account/user/v1/address.proto";
+import "google/protobuf/timestamp.proto";
+
+message User {
+  string id = 1;
+  repeated Address address = 2;
+  bool blocked = 3;
+  // repeated Client clients = 3;
+  // repeated ClientApproval client_approvals = 4;
+  string email = 4;
+  bool email_verified = 5;
+  string last_ip = 6;
+  google.protobuf.Timestamp last_login = 7;
+  google.protobuf.Timestamp last_password_reset = 8;
+  int32 logins_count = 9;
+  string password = 10;
+  string phone_number = 11;
+  bool phone_number_verified = 12;
+  Profile profile = 13;
+  string username = 14;
+  google.protobuf.Timestamp created_at = 15;
+  google.protobuf.Timestamp updated_at = 16;
+}
+
+message AuthenticateUserRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message AuthenticateUserResponse {
+  string access_token = 1;
+  string expires_in = 2;
+  string id_token = 3;
+  string refresh_token = 4;
+  string scope = 5;
+  string token_type = 6;
+}
+
+message ChangePasswordRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message ChangePasswordResponse {}
+
+message CreateUserRequest {
+  string email = 1;
+  string given_name = 2;
+  string middle_name = 3;
+  string password = 4;
+  string phone_number = 5;
+}
+
+message CreateUserResponse {}
+
+message DeleteUserRequest {
+  string id = 1;
+}
+
+message DeleteUserResponse {}
+
+message GetUserRequest {
+  string id = 1;
+}
+
+message GetUserResponse {
+  User user = 1;
+}
+
+message ListUsersRequest {
+  string parent = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+}
+
+message ListUsersResponse {
+  repeated User users = 1;
+  string next_page_token = 2;
+}
+
+message ResetPasswordRequest {
+  string email = 1;
+}
+
+message ResetPasswordResponse {
+}
+
+message UpdateUserRequest {
+  string id = 1;
+  optional string email = 2;
+  optional string password = 3;
+  optional string phone_number = 4;
+  optional string username = 5;
+  optional UpdateProfileRequest profile = 6;
+}
+
+message UpdateUserResponse {
+  User user = 1;
+}
