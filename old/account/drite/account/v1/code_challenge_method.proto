@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package drite.account.v1;
-
-enum CodeChallengeMethod {
-  CODE_CHALLENGE_METHOD_UNSPECIFIED = 0;
-  CODE_CHALLENGE_METHOD_PLAIN = 1;
-  CODE_CHALLENGE_METHOD_S256 = 2;
-}

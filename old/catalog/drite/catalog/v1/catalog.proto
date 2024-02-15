@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package drite.catalog.v1;
-
-// Product catalog service
-service CatalogService {
-  
-}

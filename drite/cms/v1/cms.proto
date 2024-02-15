@@ -4,13 +4,30 @@ package drite.cms.v1;
 
 import "google/protobuf/struct.proto";
 
-message CreateFieldRequest {
-  string preset_id = 1;
-  string parent_id = 2;
-  string field_type_id = 3;
-  bool is_repeatable = 4;
-  string name = 5;
-  google.protobuf.Struct attributes = 6;
+
+service CMSService {
+  rpc CreatePreset(CreatePresetRequest) returns (CreatePresetResponse);
+  rpc CreateFilledField(CreateFilledFieldRequest) returns (CreateFilledFieldResponse);
+  rpc CreateManyFilledFields(CreateManyFilledFieldsRequest) returns (CreateManyFilledFieldsResponse);
+  // rpc CreateField(CreateFieldRequest) returns (Field);
+  // rpc DeleteField(DeleteRequest) returns (Field);
+  // rpc DeletePreset(DeleteRequest) returns (Preset);
+  // rpc GetField(GetRequest) returns (Field);
+  // rpc GetPreset(GetRequest) returns (Preset);
+  // rpc ListPresets(ListRequest) returns (ListPresetsResponse);
+  // rpc ListFields(ListRequest) returns (ListFieldsResponse);
+  // rpc ListFieldTypes(ListRequest) returns (ListFieldTypesResponse);
+  // rpc ListFilledFields(ListFilledFieldsRequest) returns (ListFilledFieldsResponse);
+  // rpc UpdatePreset(UpdatePresetRequest) returns (Preset);
+  // rpc UpdateField(UpdateFieldRequest) returns (Field);
+}
+
+message CreatePresetRequest {
+  string name = 1;
+}
+
+message CreatePresetResponse {
+  Preset preset = 1;
 }
 
 message CreateFilledFieldRequest {
@@ -21,13 +38,28 @@ message CreateFilledFieldRequest {
   repeated CreateFilledFieldRequest filled_field = 6;
 }
 
+message CreateFilledFieldResponse {
+  FilledField filled_field = 1;
+}
+
+message CreateFieldRequest {
+  string preset_id = 1;
+  string parent_id = 2;
+  string field_type_id = 3;
+  bool is_repeatable = 4;
+  string name = 5;
+  google.protobuf.Struct attributes = 6;
+}
+
 message CreateManyFilledFieldsRequest {
   repeated CreateFilledFieldRequest filled_field = 1;
 }
 
-message CreatePresetRequest {
-  string name = 1;
+message CreateManyFilledFieldsResponse {
+  repeated FilledField filled_fields = 1;
+  string next_page_token = 2;
 }
+
 
 message DeleteRequest {
   string id = 1;
@@ -129,21 +161,4 @@ message UpdateFieldRequest {
 message UpdatePresetRequest {
   string id = 1;
   string name = 2;
-}
-
-service CMSService {
-  rpc CreatePreset(CreatePresetRequest) returns (Preset);
-  rpc CreateFilledField(CreateFilledFieldRequest) returns (FilledField);
-  rpc CreateManyFilledFields(CreateManyFilledFieldsRequest) returns (ListFilledFieldsResponse);
-  rpc CreateField(CreateFieldRequest) returns (Field);
-  rpc DeleteField(DeleteRequest) returns (Field);
-  rpc DeletePreset(DeleteRequest) returns (Preset);
-  rpc GetField(GetRequest) returns (Field);
-  rpc GetPreset(GetRequest) returns (Preset);
-  rpc ListPresets(ListRequest) returns (ListPresetsResponse);
-  rpc ListFields(ListRequest) returns (ListFieldsResponse);
-  rpc ListFieldTypes(ListRequest) returns (ListFieldTypesResponse);
-  rpc ListFilledFields(ListFilledFieldsRequest) returns (ListFilledFieldsResponse);
-  rpc UpdatePreset(UpdatePresetRequest) returns (Preset);
-  rpc UpdateField(UpdateFieldRequest) returns (Field);
 }

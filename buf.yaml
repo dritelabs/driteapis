@@ -20,3 +20,4 @@ lint:
   ignore:
     - google/type/datetime.proto
     - google/protobuf/timestamp.proto
+    - ./old

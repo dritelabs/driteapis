@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package drite.wms.v1;
-
-// Warehouse Managment System
-service WMSService {
-  
-}

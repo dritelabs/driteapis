@@ -1,6 +1,0 @@
-syntax = "proto3";
-
-package drite.oms.v1;
-
-// Order Managment System
-service OMSService {}
