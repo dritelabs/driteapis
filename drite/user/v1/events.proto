@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package drite.account.user.v1;
+package drite.user.v1;
 
 message UserCreated {
   string id = 1;

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package drite.auth.v1;
+
+import "drite/account/auth/v1/user.proto";
+
+service AuthService {
+  rpc AuthenticateUser(AuthenticateUserRequest) returns (AuthenticateUserResponse);
+}

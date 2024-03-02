@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package drite.account.user.v1;
+package drite.user.v1;
 
 // import "pb/drite/accounts/v1/client.proto";
 // import "pb/drite/accounts/v1/client_approval.proto";

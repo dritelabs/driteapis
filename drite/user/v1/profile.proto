@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package drite.account.user.v1;
+package drite.user.v1;
 
 import "drite/account/user/v1/gender.proto";
 import "google/protobuf/timestamp.proto";
