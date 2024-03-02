@@ -4,4 +4,5 @@ package drite.auth.v1;
 
 message UserAuthenticated {
   string id = 1;
+  string email = 2;
 }

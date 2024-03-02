@@ -5,7 +5,6 @@ package drite.user.v1;
 import "drite/user/v1/user.proto";
 
 service UserService {
-  rpc AuthenticateUser(AuthenticateUserRequest) returns (AuthenticateUserResponse);
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
   rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
   rpc GetUser(GetUserRequest) returns (GetUserResponse);
