@@ -4,8 +4,8 @@ package drite.user.v1;
 
 // import "pb/drite/accounts/v1/client.proto";
 // import "pb/drite/accounts/v1/client_approval.proto";
-import "drite/account/user/v1/profile.proto";
-import "drite/account/user/v1/address.proto";
+import "drite/user/v1/profile.proto";
+import "drite/user/v1/address.proto";
 import "google/protobuf/timestamp.proto";
 
 message User {
