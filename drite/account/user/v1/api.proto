@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package drite.user.v1;
+package drite.account.user.v1;
 
-import "drite/user/v1/user.proto";
+import "drite/account/user/v1/user.proto";
 
 service UserService {
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
