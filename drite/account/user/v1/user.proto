@@ -8,6 +8,15 @@ import "drite/account/user/v1/profile.proto";
 import "drite/account/user/v1/address.proto";
 import "google/protobuf/timestamp.proto";
 
+service UserService {
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+  rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
+  rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse);
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+}
+
 message User {
   string id = 1;
   repeated Address address = 2;
