@@ -5,6 +5,7 @@ package drite.account.user.v1;
 import "drite/account/user/v1/user.proto";
 
 service UserService {
+  option (ts.server) = GRPC1_SERVER;
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
   rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
   rpc GetUser(GetUserRequest) returns (GetUserResponse);
