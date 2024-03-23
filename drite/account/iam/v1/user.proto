@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+package drite.account.iam.v1;
+
+message User {}

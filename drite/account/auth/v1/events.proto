@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package drite.account.auth.v1;
-
-message UserAuthenticated {
-  string id = 1;
-  string email = 2;
-}

@@ -2,10 +2,10 @@ syntax = "proto3";
 
 package drite.account.user.v1;
 
-// import "pb/drite/accounts/v1/client.proto";
-// import "pb/drite/accounts/v1/client_approval.proto";
 import "drite/account/user/v1/profile.proto";
 import "drite/account/user/v1/address.proto";
+import "drite/account/user/v1/client.proto";
+import "drite/account/user/v1/client_approval.proto";
 import "google/protobuf/timestamp.proto";
 
 service UserService {
@@ -21,21 +21,20 @@ message User {
   string id = 1;
   repeated Address address = 2;
   bool blocked = 3;
-  // repeated Client clients = 3;
-  // repeated ClientApproval client_approvals = 4;
-  string email = 4;
-  bool email_verified = 5;
-  string last_ip = 6;
-  google.protobuf.Timestamp last_login = 7;
-  google.protobuf.Timestamp last_password_reset = 8;
-  int32 logins_count = 9;
-  string password = 10;
-  string phone_number = 11;
-  bool phone_number_verified = 12;
-  Profile profile = 13;
-  string username = 14;
-  google.protobuf.Timestamp created_at = 15;
-  google.protobuf.Timestamp updated_at = 16;
+  repeated ClientApproval client_approvals = 4;
+  string email = 5;
+  bool email_verified = 6;
+  string last_ip = 7;
+  google.protobuf.Timestamp last_login = 8;
+  google.protobuf.Timestamp last_password_reset = 9;
+  int32 logins_count = 10;
+  string password = 11;
+  string phone_number = 12;
+  bool phone_number_verified = 13;
+  Profile profile = 14;
+  string username = 15;
+  google.protobuf.Timestamp created_at = 16;
+  google.protobuf.Timestamp updated_at = 17;
 }
 
 message AuthenticateUserRequest {

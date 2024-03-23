@@ -15,3 +15,8 @@ message UserPasswordChanged {
 }
 
 message UserPasswordResetRequested {}
+
+message UserAuthenticated {
+  string id = 1;
+  string email = 2;
+}
