@@ -2,4 +2,11 @@ syntax = "proto3";
 
 package drite.account.iam.v1;
 
-message Role {}
+import "drite/account/iam/v1/permission.proto";
+
+message Role {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  repeated Permission permission = 4;
+}
