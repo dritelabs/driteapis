@@ -45,7 +45,7 @@ message AuthenticateUserRequest {
 
 message AuthenticateUserResponse {
   string access_token = 1;
-  string expires_in = 2;
+  int32 expires_in = 2;
   string id_token = 3;
   string refresh_token = 4;
   string scope = 5;
