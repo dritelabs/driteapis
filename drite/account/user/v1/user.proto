@@ -4,11 +4,12 @@ package drite.account.user.v1;
 
 import "drite/account/user/v1/profile.proto";
 import "drite/account/user/v1/address.proto";
-import "drite/account/user/v1/client.proto";
+// import "drite/account/user/v1/client.proto";
 import "drite/account/user/v1/client_approval.proto";
 import "google/protobuf/timestamp.proto";
 
 service UserService {
+  rpc AuthenticateUser(AuthenticateUserRequest) returns (AuthenticateUserResponse);
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
   rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
   rpc GetUser(GetUserRequest) returns (GetUserResponse);
