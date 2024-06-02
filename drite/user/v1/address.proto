@@ -9,24 +9,25 @@ message Address {
   string user_id = 2;
   string city = 3;
   string country = 4;
-  string line1 = 5;
-  string line2 = 6;
-  string phone_number = 7;
-  int32 postal_code = 8;
-  string region = 9;
-  google.protobuf.Timestamp created_at = 10;
-  google.protobuf.Timestamp updated_at = 11;
+  bool default = 5;
+  string line1 = 6;
+  string line2 = 7;
+  string phone_number = 8;
+  int32 postal_code = 9;
+  string region = 10;
+  google.protobuf.Timestamp created_at = 11;
+  google.protobuf.Timestamp updated_at = 12;
 }
 
 message CreateAddressRequest {
-  string user_id = 2;
-  string city = 3;
-  string country = 4;
-  string line1 = 5;
-  string line2 = 6;
-  string phone_number = 7;
-  int32 postal_code = 8;
-  string region = 9;
+  string user_id = 1;
+  string city = 2;
+  string country = 3;
+  string line1 = 4;
+  string line2 = 5;
+  string phone_number = 6;
+  int32 postal_code = 7;
+  string region = 8;
 }
 
 message CreateAddressResponse {
