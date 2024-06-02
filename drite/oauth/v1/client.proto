@@ -2,14 +2,14 @@ syntax = "proto3";
 
 package drite.oauth.v1;
 
-import "drite/account/oauth/v1/application_type.proto";
-import "drite/account/oauth/v1/client_approval.proto";
-import "drite/account/oauth/v1/grant_type.proto";
-import "drite/account/oauth/v1/public_keys_configuration.proto";
-import "drite/account/oauth/v1/refresh_token_rotation_type.proto";
-import "drite/account/oauth/v1/response_type.proto";
-import "drite/account/oauth/v1/scope.proto";
-import "drite/account/oauth/v1/token_endpoint_auth_method.proto";
+import "drite/oauth/v1/application_type.proto";
+import "drite/oauth/v1/client_approval.proto";
+import "drite/oauth/v1/grant_type.proto";
+import "drite/oauth/v1/public_keys_configuration.proto";
+import "drite/oauth/v1/refresh_token_rotation_type.proto";
+import "drite/oauth/v1/response_type.proto";
+import "drite/oauth/v1/scope.proto";
+import "drite/oauth/v1/token_endpoint_auth_method.proto";
 import "google/protobuf/any.proto";
 import "google/protobuf/timestamp.proto";
 

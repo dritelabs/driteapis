@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package drite.user.v1;
 
-import "drite/account/user/v1/scope.proto";
+import "drite/user/v1/scope.proto";
 import "google/protobuf/timestamp.proto";
 
 message ClientApproval {

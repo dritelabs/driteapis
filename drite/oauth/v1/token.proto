@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package drite.oauth.v1;
 
-import "drite/account/oauth/v1/grant_type.proto";
+import "drite/oauth/v1/grant_type.proto";
 
 message TokenRequest {
   message AuthorizationCodeGrant {

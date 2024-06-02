@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package drite.iam.v1;
 
-import "drite/account/iam/v1/permission.proto";
+import "drite/iam/v1/permission.proto";
 
 message Resource {
   string id = 1;

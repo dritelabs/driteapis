@@ -2,11 +2,11 @@ syntax = "proto3";
 
 package drite.oauth.v1;
 
-import "drite/account/oauth/v1/client.proto";
-import "drite/account/oauth/v1/jwk.proto";
-import "drite/account/oauth/v1/token.proto";
-import "drite/account/oauth/v1/user.proto";
-import "drite/account/oauth/v1/authorization.proto";
+import "drite/oauth/v1/client.proto";
+import "drite/oauth/v1/jwk.proto";
+import "drite/oauth/v1/token.proto";
+import "drite/oauth/v1/user.proto";
+import "drite/oauth/v1/authorization.proto";
 
 service OAuthService {
   rpc Authorize(AuthorizeRequest) returns (AuthorizeResponse);

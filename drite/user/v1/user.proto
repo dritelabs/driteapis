@@ -2,10 +2,11 @@ syntax = "proto3";
 
 package drite.user.v1;
 
-import "drite/account/user/v1/profile.proto";
-import "drite/account/user/v1/address.proto";
-// import "drite/account/user/v1/client.proto";
-import "drite/account/user/v1/client_approval.proto";
+import "drite/user/v1/address.proto";
+import "drite/user/v1/gender.proto";
+import "drite/user/v1/profile.proto";
+// import "drite/user/v1/client.proto";
+import "drite/user/v1/client_approval.proto";
 import "google/protobuf/timestamp.proto";
 
 service UserService {

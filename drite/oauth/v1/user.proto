@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package drite.oauth.v1;
 
-import "drite/account/oauth/v1/client_approval.proto";
+import "drite/oauth/v1/client_approval.proto";
 import "google/protobuf/timestamp.proto";
 
 message User {

@@ -1,5 +1,5 @@
 version: v2
-name: https://github.com/dritelabs/driteapis
+name: github.com/dritelabs/driteapis
 breaking:
   use:
     - FILE
