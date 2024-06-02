@@ -1,7 +1,5 @@
 version: v2
 name: github.com/dritelabs/driteapis
-modules:
-  - path: drite/user
 breaking:
   use:
     - FILE
