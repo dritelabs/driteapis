@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package drite.user.v1;
+
+import "google/protobuf/timestamp.proto";
+
+message Address {
+  string id = 1;
+  string user_id = 2;
+  string city = 3;
+  string country = 4;
+  string line1 = 5;
+  string line2 = 6;
+  string phone_number = 7;
+  int32 postal_code = 8;
+  string region = 9;
+  google.protobuf.Timestamp created_at = 10;
+  google.protobuf.Timestamp updated_at = 11;
+}
+
+message CreateAddressRequest {
+  string user_id = 2;
+  string city = 3;
+  string country = 4;
+  string line1 = 5;
+  string line2 = 6;
+  string phone_number = 7;
+  int32 postal_code = 8;
+  string region = 9;
+}
+
+message CreateAddressResponse {
+  Address address = 1;
+}

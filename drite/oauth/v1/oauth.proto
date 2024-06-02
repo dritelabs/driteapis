@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package drite.oauth.v1;
+
+import "drite/account/oauth/v1/client.proto";
+import "drite/account/oauth/v1/jwk.proto";
+import "drite/account/oauth/v1/token.proto";
+import "drite/account/oauth/v1/user.proto";
+import "drite/account/oauth/v1/authorization.proto";
+
+service OAuthService {
+  rpc Authorize(AuthorizeRequest) returns (AuthorizeResponse);
+  rpc CreateClient(CreateClientRequest) returns (CreateClientResponse);
+  rpc DeleteClient(DeleteClientRequest) returns (DeleteClientResponse);
+  rpc GetClient(GetClientRequest) returns (GetClientResponse);
+  rpc GetJwks(GetJwksRequest) returns (GetJwksResponse);
+  rpc ListClients(ListClientsRequest) returns (ListClientsResponse);
+  rpc Token(TokenRequest) returns (TokenResponse);
+  rpc UpdateClient (UpdateClientRequest) returns (UpdateClientResponse);
+}

@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package drite.oauth.v1;
+
+import "drite/account/oauth/v1/grant_type.proto";
+
+message TokenRequest {
+  message AuthorizationCodeGrant {
+    string code = 1;
+    string redirect_uri = 2;
+    string code_verifier = 3;
+  }
+
+  message ClientCredentialsGrant {}
+
+  message RefreshTokenGrant {
+    string refresh_token = 1;
+  }
+
+  string client_id = 1;
+  string scope = 2;
+  GrantType grant_type = 3;
+  oneof grant_type_request {
+    AuthorizationCodeGrant authorization_code_grant = 4;
+    ClientCredentialsGrant client_credentials_grant = 5;
+    RefreshTokenGrant refresh_token_grant = 6;
+  }
+}
+
+message TokenResponse {
+  string access_token = 1;
+  string expires_in = 2;
+  string id_token = 3;
+  string refresh_token = 4;
+  string scope = 5;
+  string token_type = 6;
+}

@@ -1,0 +1,117 @@
+syntax = "proto3";
+
+package drite.user.v1;
+
+import "drite/account/user/v1/profile.proto";
+import "drite/account/user/v1/address.proto";
+// import "drite/account/user/v1/client.proto";
+import "drite/account/user/v1/client_approval.proto";
+import "google/protobuf/timestamp.proto";
+
+service UserService {
+  rpc AuthenticateUser(AuthenticateUserRequest) returns (AuthenticateUserResponse);
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+  rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
+  rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse);
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+}
+
+message User {
+  string id = 1;
+  repeated Address address = 2;
+  bool blocked = 3;
+  repeated ClientApproval client_approvals = 4;
+  string email = 5;
+  bool email_verified = 6;
+  string last_ip = 7;
+  google.protobuf.Timestamp last_login = 8;
+  google.protobuf.Timestamp last_password_reset = 9;
+  int32 logins_count = 10;
+  string password = 11;
+  string phone_number = 12;
+  bool phone_number_verified = 13;
+  Profile profile = 14;
+  string username = 15;
+  google.protobuf.Timestamp created_at = 16;
+  google.protobuf.Timestamp updated_at = 17;
+}
+
+message AuthenticateUserRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message AuthenticateUserResponse {
+  string access_token = 1;
+  int32 expires_in = 2;
+  string id_token = 3;
+  string refresh_token = 4;
+  string scope = 5;
+  string token_type = 6;
+}
+
+message ChangePasswordRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message ChangePasswordResponse {}
+
+message CreateUserRequest {
+  string email = 1;
+  Gender gender = 2;
+  string given_name = 3;
+  string middle_name = 4;
+  string password = 5;
+  string phone_number = 6;
+  string birthdate = 7;
+}
+
+message CreateUserResponse {}
+
+message DeleteUserRequest {
+  string id = 1;
+}
+
+message DeleteUserResponse {}
+
+message GetUserRequest {
+  string id = 1;
+}
+
+message GetUserResponse {
+  User user = 1;
+}
+
+message ListUsersRequest {
+  string parent = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+}
+
+message ListUsersResponse {
+  repeated User users = 1;
+  string next_page_token = 2;
+}
+
+message ResetPasswordRequest {
+  string email = 1;
+}
+
+message ResetPasswordResponse {
+}
+
+message UpdateUserRequest {
+  string id = 1;
+  optional string email = 2;
+  optional string password = 3;
+  optional string phone_number = 4;
+  optional string username = 5;
+  optional UpdateProfileRequest profile = 6;
+}
+
+message UpdateUserResponse {
+  User user = 1;
+}

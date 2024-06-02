@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package drite.iam.v1;
+
+message Permission {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+}

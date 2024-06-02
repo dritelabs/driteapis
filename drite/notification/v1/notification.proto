@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package drite.notification.v1;
+
+service NotificationService {}
+
+message Notification {}
